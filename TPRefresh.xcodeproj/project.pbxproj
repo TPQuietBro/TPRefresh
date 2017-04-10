@@ -18,7 +18,7 @@
 		58E7321A1E9B331B00E628DE /* DiyFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732131E9B331B00E628DE /* DiyFooter.m */; };
 		58E7321B1E9B331B00E628DE /* DiyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732151E9B331B00E628DE /* DiyHeader.m */; };
 		58E732211E9B35AD00E628DE /* TestRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732201E9B35AD00E628DE /* TestRefreshManager.m */; };
-		58E732241E9B369300E628DE /* EWBaseRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732231E9B369300E628DE /* EWBaseRefreshManager.m */; };
+		58E732271E9B5BFC00E628DE /* EWBaseRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732261E9B5BFC00E628DE /* EWBaseRefreshManager.m */; };
 		D71738F1812CF555E33D3D30 /* libPods-TPRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB0073DC76232BACEDBD9CB /* libPods-TPRefresh.a */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +63,8 @@
 		58E7321E1E9B334E00E628DE /* TPRefresh.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPRefresh.pch; sourceTree = "<group>"; };
 		58E7321F1E9B35AD00E628DE /* TestRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRefreshManager.h; sourceTree = "<group>"; };
 		58E732201E9B35AD00E628DE /* TestRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRefreshManager.m; sourceTree = "<group>"; };
-		58E732221E9B369300E628DE /* EWBaseRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWBaseRefreshManager.h; path = DIYRefreshImage/EWBaseRefreshManager.h; sourceTree = "<group>"; };
-		58E732231E9B369300E628DE /* EWBaseRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWBaseRefreshManager.m; path = DIYRefreshImage/EWBaseRefreshManager.m; sourceTree = "<group>"; };
+		58E732251E9B5BFC00E628DE /* EWBaseRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWBaseRefreshManager.h; sourceTree = "<group>"; };
+		58E732261E9B5BFC00E628DE /* EWBaseRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWBaseRefreshManager.m; sourceTree = "<group>"; };
 		5E526E48E62256CA6538951A /* Pods-TPRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPRefresh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPRefresh/Pods-TPRefresh.debug.xcconfig"; sourceTree = "<group>"; };
 		6632ABADBA1885E1FB9980C6 /* Pods-TPRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPRefresh.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPRefresh/Pods-TPRefresh.release.xcconfig"; sourceTree = "<group>"; };
 		8EB0073DC76232BACEDBD9CB /* libPods-TPRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TPRefresh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,8 +176,8 @@
 		58E732101E9B331B00E628DE /* TPRefreshBase */ = {
 			isa = PBXGroup;
 			children = (
-				58E732221E9B369300E628DE /* EWBaseRefreshManager.h */,
-				58E732231E9B369300E628DE /* EWBaseRefreshManager.m */,
+				58E732251E9B5BFC00E628DE /* EWBaseRefreshManager.h */,
+				58E732261E9B5BFC00E628DE /* EWBaseRefreshManager.m */,
 				58E732111E9B331B00E628DE /* DIYRefreshImage */,
 			);
 			path = TPRefreshBase;
@@ -392,7 +392,7 @@
 				58E731D41E9B320900E628DE /* AppDelegate.m in Sources */,
 				58E7321B1E9B331B00E628DE /* DiyHeader.m in Sources */,
 				58E731D11E9B320900E628DE /* main.m in Sources */,
-				58E732241E9B369300E628DE /* EWBaseRefreshManager.m in Sources */,
+				58E732271E9B5BFC00E628DE /* EWBaseRefreshManager.m in Sources */,
 				58E7321A1E9B331B00E628DE /* DiyFooter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
