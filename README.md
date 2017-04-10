@@ -1,4 +1,5 @@
 # TPRefresh
+## 新增了代理的方式进行调用,详情请看demo
 简单的原理介绍:
 通过创建一个基类EWBaseRefreshManager来管理基本的刷新操作.
 ```
