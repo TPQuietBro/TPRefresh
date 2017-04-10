@@ -9,6 +9,13 @@
 #import "EWBaseRefreshManager.h"
 #import "DiyFooter.h"
 #import "DiyHeader.h"
+@interface EWBaseRefreshManager()
+
+@property (nonatomic , strong) NSURLSessionTask *dataTaskHeader;
+
+@property (nonatomic , strong) NSURLSessionTask *dataTaskFooter;
+
+@end
 
 @implementation EWBaseRefreshManager
 - (instancetype)initWithTarget:(UITableView *)tableView URLString:(NSString *)urlString callBackValue:(void (^)(id))callBackValue{
@@ -20,8 +27,9 @@
         DiyFooter *footer = [DiyFooter footerWithRefreshingBlock:^{
             [self refreshFooter];
         }];
-        
         self.tableView.mj_footer = footer;
+        //这句代码的作用是方便扩展
+        self.childManager = self;
     }
     return self;
 }
@@ -34,8 +42,22 @@
     return nil;
 }
 
+/**
+ * 取消请求
+ */
 - (void)cancellRefresh{
+    self.dataTaskHeader = [self.childManager refreshTargetHeader];
+    if (self.dataTaskHeader) {
+        [self.dataTaskHeader cancel];
+    }
+    self.dataTaskFooter = [self.childManager refreshTargetFooter];
     
+    if (self.dataTaskFooter) {
+        [self.dataTaskFooter cancel];
+    }
+    
+    self.dataTaskHeader = nil;
+    self.dataTaskFooter = nil;
 }
 
 #pragma mark - refresh methods

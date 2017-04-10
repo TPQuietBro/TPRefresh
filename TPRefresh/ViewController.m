@@ -24,6 +24,17 @@ static NSString *ID = @"testCell";
 #define WeakSelf __weak __typeof(self)weakSelf = self;
 @implementation ViewController
 
+#pragma mark - life cycle
+/**
+ * 退出的时候取消进行中的请求
+ */
+- (void)dealloc{
+    
+    [self.testRefreshManagerByDelegate cancellRefresh];
+    
+    [self.testRefreshManagerByBlock cancellRefresh];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];

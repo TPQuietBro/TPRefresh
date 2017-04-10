@@ -33,6 +33,8 @@ typedef void(^callBackValue)(id value);
 
 @property (nonatomic , weak) id<EWBaseRefreshManagerDelegate> delegate;
 
+@property (nonatomic , strong) EWBaseRefreshManager *childManager;
+
 /**
  * 初始化方法
  */

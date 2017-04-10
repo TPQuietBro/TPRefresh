@@ -14,10 +14,6 @@
 
 @implementation TestRefreshManager
 
-- (void)cancellRefresh{
-    [self.dataTask cancel];
-}
-
 - (NSURLSessionDataTask *)refreshTargetHeader{
     [self.dataArray removeAllObjects];
     self.dataTask = nil;
