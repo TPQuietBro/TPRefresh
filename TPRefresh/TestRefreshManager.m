@@ -29,8 +29,14 @@
         [self endHeaderRefreshing];
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
     }
+    //block
     self.callbackValue ? self.callbackValue(self.dataArray) : nil;
+    
+    //delegate
+    [self.delegate respondsToSelector:@selector(didRefreshWithCallBackValue:)] ? [self.delegate didRefreshWithCallBackValue:self.dataArray] : nil;
+    
     [self endHeaderRefreshing];
+    
     return self.dataTask;
 }
 
@@ -42,7 +48,12 @@
         [self.dataArray addObject:@(i)];
     }
     
+    //block
     self.callbackValue ? self.callbackValue(self.dataArray) : nil;
+    
+    //delegate
+    [self.delegate respondsToSelector:@selector(didRefreshWithCallBackValue:)] ? [self.delegate didRefreshWithCallBackValue:self.dataArray] : nil;
+    
     [self endFooterRefreshing];
     return self.dataTask;
 }

@@ -9,12 +9,14 @@
 #import "ViewController.h"
 #import "TestRefreshManager.h"
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,EWBaseRefreshManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //数据源数组
 @property (nonatomic , strong) NSMutableArray *dataArray;
-//test刷新manager
-@property (nonatomic , strong) TestRefreshManager *testRefreshManager;
+//刷新的manager by block
+@property (nonatomic , strong) TestRefreshManager *testRefreshManagerByBlock;
+//by delegate
+@property (nonatomic , strong) TestRefreshManager *testRefreshManagerByDelegate;
 @end
 
 static NSString *ID = @"testCell";
@@ -40,26 +42,48 @@ static NSString *ID = @"testCell";
     return cell;
 }
 
+#pragma mark - custom delegate方式进行刷新
+
+- (void)didRefreshWithCallBackValue:(id)value{
+    self.dataArray = value;
+    [self.tableView reloadData];
+}
+
 #pragma mark - API Mehtods
 
 - (void)getTestList{
     //开始刷新
-    [self.testRefreshManager refresh];
+    
+    //block方式
+    //[self.testRefreshManagerByBlock refresh];
+    
+    //delegate方式
+    [self.testRefreshManagerByDelegate refresh];
 }
 
 #pragma mark - getter
 /**
- * 生成刷新实例
+ * 生成刷新实例block方式
  */
-- (TestRefreshManager *)testRefreshManager{
-    if (!_testRefreshManager) {
+- (TestRefreshManager *)testRefreshManagerByBlock{
+    if (!_testRefreshManagerByBlock) {
         WeakSelf
-        _testRefreshManager = [[TestRefreshManager alloc] initWithTarget:self.tableView URLString:@"" callBackValue:^(id value) {
+        _testRefreshManagerByBlock = [[TestRefreshManager alloc] initWithTarget:self.tableView URLString:@"" callBackValue:^(id value) {
             weakSelf.dataArray = value;
             [weakSelf.tableView reloadData];
         }];
     }
-    return _testRefreshManager;
+    return _testRefreshManagerByBlock;
+}
+/**
+ * 生成刷新实例delegate方式
+ */
+- (TestRefreshManager *)testRefreshManagerByDelegate{
+    if (!_testRefreshManagerByDelegate) {
+        _testRefreshManagerByDelegate = [[TestRefreshManager alloc] initWithTarget:self.tableView URLString:@"" callBackValue:nil];
+        _testRefreshManagerByDelegate.delegate = self;
+    }
+    return _testRefreshManagerByDelegate;
 }
 
 - (NSMutableArray *)dataArray{

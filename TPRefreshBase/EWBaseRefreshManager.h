@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 typedef void(^callBackValue)(id value);
+
+@protocol EWBaseRefreshManagerDelegate <NSObject>
+
+- (void)didRefreshWithCallBackValue:(id)value;
+
+@end
+
 @interface EWBaseRefreshManager : NSObject
 //传进来的tableView
 @property (nonatomic , strong) UITableView *tableView;
@@ -23,6 +30,8 @@ typedef void(^callBackValue)(id value);
 
 //刷新的页码
 @property (nonatomic , assign) NSInteger page;
+
+@property (nonatomic , weak) id<EWBaseRefreshManagerDelegate> delegate;
 
 /**
  * 初始化方法
