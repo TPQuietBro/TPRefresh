@@ -18,10 +18,10 @@
 @end
 
 @implementation EWBaseRefreshManager
-- (instancetype)initWithTarget:(UITableView *)tableView URLString:(NSString *)urlString callBackValue:(void (^)(id))callBackValue{
+- (instancetype)initWithTarget:(UITableView *)tableView requestParams:(NSDictionary *)requestParams callBackValue:(void(^)(id value))callBackValue{
     self = [super init];
     if (self) {
-        self.urlString = urlString;
+        self.requestParams = requestParams;
         self.tableView = tableView;
         self.callbackValue = callBackValue;
         DiyFooter *footer = [DiyFooter footerWithRefreshingBlock:^{

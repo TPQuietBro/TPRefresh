@@ -22,8 +22,8 @@ typedef void(^callBackValue)(id value);
 //回调的block
 @property (nonatomic , copy) callBackValue callbackValue;
 
-//url
-@property (nonatomic , strong) NSString *urlString;
+//传入的参数字典,包含url和请求参数,具体key值自定义即可
+@property (nonatomic , strong) NSDictionary *requestParams;
 
 //回调的数据
 @property (nonatomic , strong) NSMutableArray *dataArray;
@@ -38,7 +38,7 @@ typedef void(^callBackValue)(id value);
 /**
  * 初始化方法
  */
-- (instancetype)initWithTarget:(UITableView *)tableView URLString:(NSString *)urlString callBackValue:(void(^)(id value))callBackValue;
+- (instancetype)initWithTarget:(UITableView *)tableView requestParams:(NSDictionary *)requestParams callBackValue:(void(^)(id value))callBackValue;
 
 /**
  * 需要重写的方法
