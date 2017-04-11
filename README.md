@@ -61,7 +61,7 @@ typedef void(^callBackValue)(id value);
 - (void)refreshHeader;
 @end
 ```
-然后通过产生一个继承类来重写refreshTargetHeader和refreshTargetFooter方法,这两个方法就是外部的网络请求方法,另外取消网络请求的方法cancellRefresh也需要重写,避免网络请求过程中退出当前界面网络请求还在继续的状况.
+然后通过产生一个继承类来重写refreshTargetHeader和refreshTargetFooter方法,这两个方法就是外部的网络请求方法.
 继承类中的使用方式:
 ```
 #import "TestRefreshManager.h"
