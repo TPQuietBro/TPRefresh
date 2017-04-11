@@ -116,7 +116,12 @@ typedef void(^callBackValue)(id value);
 - (TestRefreshManager *)testRefreshManager{
     if (!_testRefreshManager) {
         WeakSelf
-        _testRefreshManager = [[TestRefreshManager alloc] initWithTarget:self.tableView URLString:@"" callBackValue:^(id value) {
+        //更新
+       // _testRefreshManager = [[TestRefreshManager alloc] initWithTarget:self.tableView URLString:@"" callBackValue:^(id value) {
+            //weakSelf.dataArray = value;
+            //[weakSelf.tableView reloadData];
+       // }];
+       _testRefreshManagerByBlock = [[TestRefreshManager alloc] initWithTarget:self.tableView requestParams:@{@"url" : @"http://fdsafd",@"params" : @{@"name" : @"allen"}} callBackValue:^(id value) {
             weakSelf.dataArray = value;
             [weakSelf.tableView reloadData];
         }];
