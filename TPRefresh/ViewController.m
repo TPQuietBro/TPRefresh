@@ -79,7 +79,7 @@ static NSString *ID = @"testCell";
 - (TestRefreshManager *)testRefreshManagerByBlock{
     if (!_testRefreshManagerByBlock) {
         WeakSelf
-        _testRefreshManagerByBlock = [[TestRefreshManager alloc] initWithTarget:self.tableView URLString:@"" callBackValue:^(id value) {
+        _testRefreshManagerByBlock = [[TestRefreshManager alloc] initWithTarget:self.tableView requestParams:@{@"url" : @"http://fdsafd",@"params" : @{@"name" : @"allen"}} callBackValue:^(id value) {
             weakSelf.dataArray = value;
             [weakSelf.tableView reloadData];
         }];
@@ -91,7 +91,7 @@ static NSString *ID = @"testCell";
  */
 - (TestRefreshManager *)testRefreshManagerByDelegate{
     if (!_testRefreshManagerByDelegate) {
-        _testRefreshManagerByDelegate = [[TestRefreshManager alloc] initWithTarget:self.tableView URLString:@"" callBackValue:nil];
+        _testRefreshManagerByDelegate = [[TestRefreshManager alloc] initWithTarget:self.tableView requestParams:@{@"url" : @"http://fdsafd",@"params" : @{@"name" : @"allen"}} callBackValue:nil];
         _testRefreshManagerByDelegate.delegate = self;
     }
     return _testRefreshManagerByDelegate;
