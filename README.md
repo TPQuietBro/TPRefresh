@@ -1,4 +1,5 @@
 # TPRefresh
+## 重新调整了框架结构和设计模式,采用工厂方法将刷新的库分离了出去,可以灵活的选取任何刷新的三方库,详情请看demo
 ## 新增了代理的方式进行调用,详情请看demo
 简单的原理介绍:
 通过创建一个基类EWBaseRefreshManager来管理基本的刷新操作.
@@ -15,8 +16,8 @@ typedef void(^callBackValue)(id value);
 //回调的block
 @property (nonatomic , copy) callBackValue callbackValue;
 
-//url
-@property (nonatomic , strong) NSString *urlString;
+//url **更换成参数字典
+//@property (nonatomic , strong) NSString *urlString;
 
 //回调的数据
 @property (nonatomic , strong) NSMutableArray *dataArray;
@@ -30,11 +31,11 @@ typedef void(^callBackValue)(id value);
 - (instancetype)initWithTarget:(UITableView *)tableView URLString:(NSString *)urlString callBackValue:(void(^)(id value))callBackValue;
 
 /**
- * 需要重写的方法
+ * 需要重写的方法,此处废弃,抽离成为了一个单独的协议来处理,子类遵守协议即可,无需继承
  */
-- (NSURLSessionDataTask *)refreshTargetHeader;
+//- (NSURLSessionDataTask *)refreshTargetHeader;
 
-- (NSURLSessionDataTask *)refreshTargetFooter;
+//- (NSURLSessionDataTask *)refreshTargetFooter;
 
 - (void)cancellRefresh;
 /**
@@ -54,14 +55,15 @@ typedef void(^callBackValue)(id value);
  *  开始刷新
  */
 
-- (void)beginRefreshing;
+//***废弃
+//- (void)beginRefreshing;
 
-- (void)refreshFooter;
+//- (void)refreshFooter;
 
-- (void)refreshHeader;
+//- (void)refreshHeader;
 @end
 ```
-然后通过产生一个继承类来重写refreshTargetHeader和refreshTargetFooter方法,这两个方法就是外部的网络请求方法.
+然后通过产生一个继承类,遵守EWChildRefreshProtocol协议来实现refreshTargetHeader和refreshTargetFooter方法,这两个方法就是外部的网络请求方法.
 继承类中的使用方式:
 ```
 #import "TestRefreshManager.h"
@@ -86,7 +88,7 @@ typedef void(^callBackValue)(id value);
     }
     if (self.dataArray.count < 5) {
         [self endHeaderRefreshing];
-        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        [self endWithNoMoreData];
     }
     self.callbackValue ? self.callbackValue(self.dataArray) : nil;
     [self endHeaderRefreshing];
