@@ -15,10 +15,12 @@
 		58E731DF1E9B320900E628DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58E731DD1E9B320900E628DE /* LaunchScreen.storyboard */; };
 		58E731EA1E9B320900E628DE /* TPRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E731E91E9B320900E628DE /* TPRefreshTests.m */; };
 		58E731F51E9B320900E628DE /* TPRefreshUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E731F41E9B320900E628DE /* TPRefreshUITests.m */; };
-		58E7321A1E9B331B00E628DE /* DiyFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732131E9B331B00E628DE /* DiyFooter.m */; };
-		58E7321B1E9B331B00E628DE /* DiyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732151E9B331B00E628DE /* DiyHeader.m */; };
 		58E732211E9B35AD00E628DE /* TestRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732201E9B35AD00E628DE /* TestRefreshManager.m */; };
 		58E732271E9B5BFC00E628DE /* EWBaseRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732261E9B5BFC00E628DE /* EWBaseRefreshManager.m */; };
+		58FC66CE1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66CD1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.m */; };
+		58FC66D41EAEDD18004EBDF3 /* EWRefreshFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66D31EAEDD18004EBDF3 /* EWRefreshFactory.m */; };
+		58FC66DB1EAF1EF2004EBDF3 /* DiyFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66D81EAF1EF2004EBDF3 /* DiyFooter.m */; };
+		58FC66DC1EAF1EF2004EBDF3 /* DiyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66DA1EAF1EF2004EBDF3 /* DiyHeader.m */; };
 		D71738F1812CF555E33D3D30 /* libPods-TPRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB0073DC76232BACEDBD9CB /* libPods-TPRefresh.a */; };
 /* End PBXBuildFile section */
 
@@ -56,15 +58,22 @@
 		58E731F01E9B320900E628DE /* TPRefreshUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPRefreshUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E731F41E9B320900E628DE /* TPRefreshUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPRefreshUITests.m; sourceTree = "<group>"; };
 		58E731F61E9B320900E628DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58E732121E9B331B00E628DE /* DiyFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiyFooter.h; sourceTree = "<group>"; };
-		58E732131E9B331B00E628DE /* DiyFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiyFooter.m; sourceTree = "<group>"; };
-		58E732141E9B331B00E628DE /* DiyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiyHeader.h; sourceTree = "<group>"; };
-		58E732151E9B331B00E628DE /* DiyHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiyHeader.m; sourceTree = "<group>"; };
 		58E7321E1E9B334E00E628DE /* TPRefresh.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPRefresh.pch; sourceTree = "<group>"; };
 		58E7321F1E9B35AD00E628DE /* TestRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRefreshManager.h; sourceTree = "<group>"; };
 		58E732201E9B35AD00E628DE /* TestRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRefreshManager.m; sourceTree = "<group>"; };
 		58E732251E9B5BFC00E628DE /* EWBaseRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWBaseRefreshManager.h; sourceTree = "<group>"; };
 		58E732261E9B5BFC00E628DE /* EWBaseRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWBaseRefreshManager.m; sourceTree = "<group>"; };
+		58FC66CC1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWRefreshInstanByMJRefresh.h; sourceTree = "<group>"; };
+		58FC66CD1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWRefreshInstanByMJRefresh.m; sourceTree = "<group>"; };
+		58FC66D01EAEDB9C004EBDF3 /* EWRefreshProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWRefreshProtocol.h; sourceTree = "<group>"; };
+		58FC66D11EAEDC10004EBDF3 /* EWRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EWRefresh.h; sourceTree = "<group>"; };
+		58FC66D21EAEDD18004EBDF3 /* EWRefreshFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWRefreshFactory.h; sourceTree = "<group>"; };
+		58FC66D31EAEDD18004EBDF3 /* EWRefreshFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWRefreshFactory.m; sourceTree = "<group>"; };
+		58FC66D51EAF1AAD004EBDF3 /* EWChildRefreshProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWChildRefreshProtocol.h; sourceTree = "<group>"; };
+		58FC66D71EAF1EF2004EBDF3 /* DiyFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiyFooter.h; sourceTree = "<group>"; };
+		58FC66D81EAF1EF2004EBDF3 /* DiyFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiyFooter.m; sourceTree = "<group>"; };
+		58FC66D91EAF1EF2004EBDF3 /* DiyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiyHeader.h; sourceTree = "<group>"; };
+		58FC66DA1EAF1EF2004EBDF3 /* DiyHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiyHeader.m; sourceTree = "<group>"; };
 		5E526E48E62256CA6538951A /* Pods-TPRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPRefresh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPRefresh/Pods-TPRefresh.debug.xcconfig"; sourceTree = "<group>"; };
 		6632ABADBA1885E1FB9980C6 /* Pods-TPRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPRefresh.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPRefresh/Pods-TPRefresh.release.xcconfig"; sourceTree = "<group>"; };
 		8EB0073DC76232BACEDBD9CB /* libPods-TPRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TPRefresh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,20 +185,51 @@
 		58E732101E9B331B00E628DE /* TPRefreshBase */ = {
 			isa = PBXGroup;
 			children = (
+				58FC66CF1EAEDB8B004EBDF3 /* EWRefreshProtocol */,
+				58FC66CA1EAED9FF004EBDF3 /* EWRefreshByMJRefresh */,
+				58FC66CB1EAED9FF004EBDF3 /* EWRefreshFactory */,
 				58E732251E9B5BFC00E628DE /* EWBaseRefreshManager.h */,
 				58E732261E9B5BFC00E628DE /* EWBaseRefreshManager.m */,
-				58E732111E9B331B00E628DE /* DIYRefreshImage */,
+				58FC66D11EAEDC10004EBDF3 /* EWRefresh.h */,
 			);
 			path = TPRefreshBase;
 			sourceTree = "<group>";
 		};
-		58E732111E9B331B00E628DE /* DIYRefreshImage */ = {
+		58FC66CA1EAED9FF004EBDF3 /* EWRefreshByMJRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				58E732121E9B331B00E628DE /* DiyFooter.h */,
-				58E732131E9B331B00E628DE /* DiyFooter.m */,
-				58E732141E9B331B00E628DE /* DiyHeader.h */,
-				58E732151E9B331B00E628DE /* DiyHeader.m */,
+				58FC66D61EAF1EF2004EBDF3 /* DIYRefreshImage */,
+				58FC66CC1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.h */,
+				58FC66CD1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.m */,
+			);
+			path = EWRefreshByMJRefresh;
+			sourceTree = "<group>";
+		};
+		58FC66CB1EAED9FF004EBDF3 /* EWRefreshFactory */ = {
+			isa = PBXGroup;
+			children = (
+				58FC66D21EAEDD18004EBDF3 /* EWRefreshFactory.h */,
+				58FC66D31EAEDD18004EBDF3 /* EWRefreshFactory.m */,
+			);
+			path = EWRefreshFactory;
+			sourceTree = "<group>";
+		};
+		58FC66CF1EAEDB8B004EBDF3 /* EWRefreshProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				58FC66D01EAEDB9C004EBDF3 /* EWRefreshProtocol.h */,
+				58FC66D51EAF1AAD004EBDF3 /* EWChildRefreshProtocol.h */,
+			);
+			path = EWRefreshProtocol;
+			sourceTree = "<group>";
+		};
+		58FC66D61EAF1EF2004EBDF3 /* DIYRefreshImage */ = {
+			isa = PBXGroup;
+			children = (
+				58FC66D71EAF1EF2004EBDF3 /* DiyFooter.h */,
+				58FC66D81EAF1EF2004EBDF3 /* DiyFooter.m */,
+				58FC66D91EAF1EF2004EBDF3 /* DiyHeader.h */,
+				58FC66DA1EAF1EF2004EBDF3 /* DiyHeader.m */,
 			);
 			path = DIYRefreshImage;
 			sourceTree = "<group>";
@@ -387,13 +427,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58FC66DC1EAF1EF2004EBDF3 /* DiyHeader.m in Sources */,
+				58FC66CE1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.m in Sources */,
 				58E732211E9B35AD00E628DE /* TestRefreshManager.m in Sources */,
 				58E731D71E9B320900E628DE /* ViewController.m in Sources */,
+				58FC66DB1EAF1EF2004EBDF3 /* DiyFooter.m in Sources */,
 				58E731D41E9B320900E628DE /* AppDelegate.m in Sources */,
-				58E7321B1E9B331B00E628DE /* DiyHeader.m in Sources */,
 				58E731D11E9B320900E628DE /* main.m in Sources */,
 				58E732271E9B5BFC00E628DE /* EWBaseRefreshManager.m in Sources */,
-				58E7321A1E9B331B00E628DE /* DiyFooter.m in Sources */,
+				58FC66D41EAEDD18004EBDF3 /* EWRefreshFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

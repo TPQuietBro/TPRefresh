@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EWChildRefreshProtocol.h"
 typedef void(^callBackValue)(id value);
 
 @protocol EWBaseRefreshManagerDelegate <NSObject>
@@ -33,19 +34,12 @@ typedef void(^callBackValue)(id value);
 
 @property (nonatomic , weak) id<EWBaseRefreshManagerDelegate> delegate;
 
-@property (nonatomic , strong) EWBaseRefreshManager *childManager;
+@property (nonatomic , strong) EWBaseRefreshManager<EWChildRefreshProtocol> *childManager;
 
 /**
  * 初始化方法
  */
 - (instancetype)initWithTarget:(UITableView *)tableView requestParams:(NSDictionary *)requestParams callBackValue:(void(^)(id value))callBackValue;
-
-/**
- * 需要重写的方法
- */
-- (NSURLSessionDataTask *)refreshTargetHeader;
-
-- (NSURLSessionDataTask *)refreshTargetFooter;
 
 /**
  * 开始刷新,封装了beginRefreshing 和 refreshHeader方法
@@ -60,15 +54,7 @@ typedef void(^callBackValue)(id value);
 
 - (void)endFooterRefreshing;
 
-/**
- *  开始刷新
- */
-
-- (void)beginRefreshing;
-
-- (void)refreshFooter;
-
-- (void)refreshHeader;
+- (void)endWithNoMoreData;
 
 /**
  * 取消请求

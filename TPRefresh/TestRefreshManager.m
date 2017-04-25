@@ -23,7 +23,7 @@
     }
     if (self.dataArray.count < 5) {
         [self endHeaderRefreshing];
-        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        [self endWithNoMoreData];
     }
     //block
     self.callbackValue ? self.callbackValue(self.dataArray) : nil;

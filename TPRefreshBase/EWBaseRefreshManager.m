@@ -7,15 +7,20 @@
 //
 
 #import "EWBaseRefreshManager.h"
-#import "DiyFooter.h"
-#import "DiyHeader.h"
+#import "EWRefreshFactory.h"
+
+
 @interface EWBaseRefreshManager()
 
 @property (nonatomic , strong) NSURLSessionTask *dataTaskHeader;
 
 @property (nonatomic , strong) NSURLSessionTask *dataTaskFooter;
 
+@property (nonatomic , strong) id<EWRefreshProtocol> refreshInstance;
+
 @end
+
+static NSString * const KRefreshByMJ = @"EWRefreshInstanByMJRefresh";
 
 @implementation EWBaseRefreshManager
 - (instancetype)initWithTarget:(UITableView *)tableView requestParams:(NSDictionary *)requestParams callBackValue:(void(^)(id value))callBackValue{
@@ -24,22 +29,13 @@
         self.requestParams = requestParams;
         self.tableView = tableView;
         self.callbackValue = callBackValue;
-        DiyFooter *footer = [DiyFooter footerWithRefreshingBlock:^{
-            [self refreshFooter];
-        }];
-        self.tableView.mj_footer = footer;
+
         //这句代码的作用是方便扩展
-        self.childManager = self;
+        if ([self conformsToProtocol:@protocol(EWChildRefreshProtocol)]) {
+            self.childManager = (EWBaseRefreshManager<EWChildRefreshProtocol> *)self;
+        }
     }
     return self;
-}
-#pragma mark - 子类重写这个两个方法完成上拉下拉刷新
-- (NSURLSessionDataTask *)refreshTargetHeader{
-    return nil;
-}
-
-- (NSURLSessionDataTask *)refreshTargetFooter{
-    return nil;
 }
 
 /**
@@ -63,33 +59,9 @@
 #pragma mark - refresh methods
 
 - (void)refresh{
-    [self refreshHeader];
-    [self beginRefreshing];
-}
-
-/**
- *  刷新头部数据
- */
-
-- (void)refreshHeader{
-    if ([self.tableView.mj_header isRefreshing]) {
-        self.tableView.userInteractionEnabled = NO;
-    }else{
-        self.tableView.userInteractionEnabled = YES;
-    }
-    self.tableView.mj_header = [DiyHeader headerWithRefreshingBlock:^{
-        [self refreshTargetHeader];
-    }];
     
-}
-/**
- *  刷新底部数据
- */
-
-- (void)refreshFooter{
-    self.tableView.mj_footer = [DiyFooter footerWithRefreshingBlock:^{
-        [self refreshTargetFooter];
-    }];
+    [self.refreshInstance refresh];
+    
 }
 
 /**
@@ -97,22 +69,26 @@
  */
 
 - (void)endHeaderRefreshing{
-    [self.tableView.mj_header endRefreshing];
+    [self.refreshInstance endHeaderRefreshing];
 }
 
 - (void)endFooterRefreshing{
-    [self.tableView.mj_footer endRefreshing];
+    [self.refreshInstance endFooterRefreshing];
 }
 
-/**
- *  开始刷新
- */
-
-- (void)beginRefreshing{
-    [self.tableView.mj_header beginRefreshing];
+- (void)endWithNoMoreData{
+    [self.refreshInstance endWithNoMoreData];
 }
 
 #pragma mark - getter
+
+- (id<EWRefreshProtocol>)refreshInstance{
+    if (!_refreshInstance) {
+        _refreshInstance = [[EWRefreshFactory shareInstance] refreshInstanceByTarget:KRefreshByMJ tableView:self.tableView withRefreshManager:self.childManager];
+    }
+    return _refreshInstance;
+}
+
 
 - (NSMutableArray *)dataArray{
     if (!_dataArray) {

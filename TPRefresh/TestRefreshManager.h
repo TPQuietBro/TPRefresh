@@ -8,6 +8,6 @@
 
 #import "EWBaseRefreshManager.h"
 
-@interface TestRefreshManager : EWBaseRefreshManager
+@interface TestRefreshManager : EWBaseRefreshManager<EWChildRefreshProtocol>
 
 @end
