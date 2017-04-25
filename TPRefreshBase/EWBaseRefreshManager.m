@@ -22,6 +22,8 @@
 
 static NSString * const KRefreshByMJ = @"EWRefreshInstanByMJRefresh";
 
+
+
 @implementation EWBaseRefreshManager
 - (instancetype)initWithTarget:(UITableView *)tableView requestParams:(NSDictionary *)requestParams callBackValue:(void(^)(id value))callBackValue{
     self = [super init];

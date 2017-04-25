@@ -25,7 +25,7 @@
 
 static NSString *const KEWHeaderAction = @"refreshTargetHeader";
 static NSString *const KEWFooterAction = @"refreshTargetFooter";
-
+#define WeakSelf __weak __typeof(self)weakSelf = self;
 
 @implementation EWRefreshInstanByMJRefresh
 
@@ -34,7 +34,8 @@ static NSString *const KEWFooterAction = @"refreshTargetFooter";
         self.refreshManager = manager;
         self.tableView = tableView;
         DiyFooter *footer = [DiyFooter footerWithRefreshingBlock:^{
-            [self refreshFooter];
+            WeakSelf
+            [weakSelf refreshFooter];
         }];
         self.tableView.mj_footer = footer;
     }
@@ -56,9 +57,10 @@ static NSString *const KEWFooterAction = @"refreshTargetFooter";
         self.tableView.userInteractionEnabled = YES;
     }
     self.tableView.mj_header = [DiyHeader headerWithRefreshingBlock:^{
+        WeakSelf
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks" //去除警告
-        [self.refreshManager performSelector:self.headerAction];
+        [weakSelf.refreshManager performSelector:weakSelf.headerAction];
 #pragma clang diagnostic pop
     }];
 }
@@ -68,9 +70,10 @@ static NSString *const KEWFooterAction = @"refreshTargetFooter";
 
 - (void)refreshFooter{
     self.tableView.mj_footer = [DiyFooter footerWithRefreshingBlock:^{
+        WeakSelf
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks" //去除警告
-        [self.refreshManager performSelector:self.footerAction];
+        [weakSelf.refreshManager performSelector:weakSelf.footerAction];
 #pragma clang diagnostic pop    
     }];
 }
