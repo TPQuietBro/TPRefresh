@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EFEAE46588BE6548997FBB4C7A30F1A6'
-               BlueprintName = 'Pods-TPRefresh'
+               BlueprintIdentifier = 'C0E9EE2F2F289526E15005BE71A2EC98'
+               BlueprintName = 'walkerSpec'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-TPRefresh.a'>
+               BuildableName = 'libwalkerSpec.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

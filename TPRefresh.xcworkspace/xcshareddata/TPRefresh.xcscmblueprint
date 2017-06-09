@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C79E29B0FD02DD8DA7CE7A2421650B428DF3C57E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C79E29B0FD02DD8DA7CE7A2421650B428DF3C57E" : 9223372036854775807,
+    "E2779E943067FC45A3A5587430AD7256E8E73DA5" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0B0BD2C2-E240-433B-B5A6-25DAFFE31541",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C79E29B0FD02DD8DA7CE7A2421650B428DF3C57E" : "TPRefresh\/",
+    "E2779E943067FC45A3A5587430AD7256E8E73DA5" : "TPFrame\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TPRefresh",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TPRefresh.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TPQuietBro\/TPRefresh.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C79E29B0FD02DD8DA7CE7A2421650B428DF3C57E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TPQuietBro\/TPWalkerFrame.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E2779E943067FC45A3A5587430AD7256E8E73DA5"
+    }
+  ]
+}

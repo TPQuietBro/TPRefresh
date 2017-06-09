@@ -8,7 +8,7 @@
 
 #import "EWBaseRefreshManager.h"
 #import "EWRefreshFactory.h"
-
+#import <UIView+WalkerFrame.h>
 
 @interface EWBaseRefreshManager()
 

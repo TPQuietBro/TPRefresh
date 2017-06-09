@@ -2,6 +2,8 @@
 platform :ios, '9.0'
 
 target 'TPRefresh' do
+    
+pod 'walkerSpec' , :path => '../TPFrame/TPFrame'
 
 pod 'MJRefresh'
 

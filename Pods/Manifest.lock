@@ -1,12 +1,19 @@
 PODS:
   - MJRefresh (3.1.12)
+  - walkerSpec (0.0.1)
 
 DEPENDENCIES:
   - MJRefresh
+  - walkerSpec (from `../TPFrame/TPFrame`)
+
+EXTERNAL SOURCES:
+  walkerSpec:
+    :path: "../TPFrame/TPFrame"
 
 SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  walkerSpec: 91dda7e8126b5ae7288abc48b500504dc4811db6
 
-PODFILE CHECKSUM: 59ed712d30c3a42c43076c27525371c9fe9cb695
+PODFILE CHECKSUM: 31f387eec4fed8eacdb61b9a670fabede55c1da4
 
 COCOAPODS: 1.2.0.beta.1

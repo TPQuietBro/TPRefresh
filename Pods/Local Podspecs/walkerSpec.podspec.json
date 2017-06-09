@@ -1,0 +1,25 @@
+{
+  "name": "walkerSpec",
+  "version": "0.0.1",
+  "summary": "A short description of walkerSpec.",
+  "description": "TPFrame",
+  "homepage": "https://github.com/TPQuietBro/TPWalkerFrame",
+  "authors": {
+    "tangpeng": "allentp@163.com"
+  },
+  "source": {
+    "git": "",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "TPWalkerFrame",
+    "TPWalkerFrame/**/*.{h,m}"
+  ],
+  "exclude_files": "Classes/Exclude",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}
