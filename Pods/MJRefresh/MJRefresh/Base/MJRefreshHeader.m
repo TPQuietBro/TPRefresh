@@ -10,7 +10,7 @@
 #import "MJRefreshHeader.h"
 
 @interface MJRefreshHeader()
-@property (assign, nonatomic) CGFloat insetTDelta;
+
 @end
 
 @implementation MJRefreshHeader
@@ -54,19 +54,12 @@
     
     // 在刷新的refreshing状态
     if (self.state == MJRefreshStateRefreshing) {
-        if (self.window == nil) return;
-        
         // sectionheader停留解决
-        CGFloat insetT = - self.scrollView.mj_offsetY > _scrollViewOriginalInset.top ? - self.scrollView.mj_offsetY : _scrollViewOriginalInset.top;
-        insetT = insetT > self.mj_h + _scrollViewOriginalInset.top ? self.mj_h + _scrollViewOriginalInset.top : insetT;
-        self.scrollView.mj_insetT = insetT;
-        
-        self.insetTDelta = _scrollViewOriginalInset.top - insetT;
         return;
     }
     
     // 跳转到下一个控制器时，contentInset可能会变
-     _scrollViewOriginalInset = self.scrollView.contentInset;
+    _scrollViewOriginalInset = self.scrollView.contentInset;
     
     // 当前的contentOffset
     CGFloat offsetY = self.scrollView.mj_offsetY;
@@ -112,38 +105,37 @@
         
         // 恢复inset和offset
         [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
-            self.scrollView.mj_insetT += self.insetTDelta;
+            self.scrollView.mj_insetT -= self.mj_h;
             
             // 自动调整透明度
             if (self.isAutomaticallyChangeAlpha) self.alpha = 0.0;
         } completion:^(BOOL finished) {
             self.pullingPercent = 0.0;
-            
-            if (self.endRefreshingCompletionBlock) {
-                self.endRefreshingCompletionBlock();
-            }
         }];
     } else if (state == MJRefreshStateRefreshing) {
-         dispatch_async(dispatch_get_main_queue(), ^{
-            [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
-                CGFloat top = self.scrollViewOriginalInset.top + self.mj_h;
-                // 增加滚动区域top
-                self.scrollView.mj_insetT = top;
-                // 设置滚动位置
-                [self.scrollView setContentOffset:CGPointMake(0, -top) animated:NO];
-            } completion:^(BOOL finished) {
-                [self executeRefreshingCallback];
-            }];
-         });
+        [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
+            // 增加滚动区域
+            CGFloat top = self.scrollViewOriginalInset.top + self.mj_h;
+            self.scrollView.mj_insetT = top;
+            
+            // 设置滚动位置
+            self.scrollView.mj_offsetY = - top;
+        } completion:^(BOOL finished) {
+            [self executeRefreshingCallback];
+        }];
     }
 }
 
 #pragma mark - 公共方法
 - (void)endRefreshing
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.state = MJRefreshStateIdle;
-    });
+    if ([self.scrollView isKindOfClass:[UICollectionView class]]) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [super endRefreshing];
+        });
+    } else {
+        [super endRefreshing];
+    }
 }
 
 - (NSDate *)lastUpdatedTime
