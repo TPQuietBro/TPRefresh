@@ -13,6 +13,6 @@
 + (instancetype)shareInstance;
 
 /*为工厂添加原料*/
-- (id)refreshInstanceByTarget:(NSString *)targetClassString tableView:(UITableView *)tableView withRefreshManager:(EWBaseRefreshManager *)manager;
+- (id)refreshInstanceByTarget:(NSString *)targetClassString tableView:(UIScrollView *)tableView withRefreshManager:(id)manager;
 
 @end

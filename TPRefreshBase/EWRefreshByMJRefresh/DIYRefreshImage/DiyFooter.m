@@ -17,8 +17,8 @@
     
     // 设置正在刷新状态的动画图片
     NSMutableArray *refreshingImages = [NSMutableArray array];
-    for (NSUInteger i = 1; i<=12; i++) {
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%zd", i]];
+    for (NSUInteger i = 0; i<49; i++) {
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"LOADNEW_000%zd.png", i]];
         [refreshingImages addObject:image];
     }
     [self setImages:refreshingImages forState:MJRefreshStateRefreshing];

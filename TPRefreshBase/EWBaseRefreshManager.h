@@ -14,11 +14,13 @@ typedef void(^callBackValue)(id value);
 
 - (void)didRefreshWithCallBackValue:(id)value;
 
+- (void)didRefreshWithFailedCallBackValue:(id)value;
+
 @end
 
 @interface EWBaseRefreshManager : NSObject
-//传进来的tableView
-@property (nonatomic , strong) UITableView *tableView;
+//传进来的View
+@property (nonatomic , strong) UIScrollView* tableView;
 
 //回调的block
 @property (nonatomic , copy) callBackValue callbackValue;
@@ -34,17 +36,26 @@ typedef void(^callBackValue)(id value);
 
 @property (nonatomic , weak) id<EWBaseRefreshManagerDelegate> delegate;
 
-@property (nonatomic , strong) EWBaseRefreshManager<EWChildRefreshProtocol> *childManager;
+@property (nonatomic , weak) id<EWChildRefreshProtocol> childManager;
+
+@property (nonatomic , strong) NSError *error;
 
 /**
  * 初始化方法
  */
-- (instancetype)initWithTarget:(UITableView *)tableView requestParams:(NSDictionary *)requestParams callBackValue:(void(^)(id value))callBackValue;
+- (instancetype)initWithTarget:(id)tableView requestParams:(NSDictionary *)requestParams callBackValue:(void(^)(id value))callBackValue;
 
 /**
  * 开始刷新,封装了beginRefreshing 和 refreshHeader方法
  */
 - (void)refresh;
+
+/**
+ * 回调数据的方法
+ */
+- (void)callBackData;
+
+- (void)callBackFailed;
 
 /**
  *  停止刷新

@@ -12,7 +12,7 @@
 @class EWBaseRefreshManager;
 @protocol EWRefreshProtocol <NSObject>
 @required
-- (instancetype)initWithTarget:(UITableView *)tableView withRefreshManager:(EWBaseRefreshManager *)manager;
+- (instancetype)initWithTarget:(UIScrollView *)tableView withRefreshManager:(id)manager;
 
 - (void)refresh;
 

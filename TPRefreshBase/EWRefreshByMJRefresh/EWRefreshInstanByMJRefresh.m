@@ -13,13 +13,15 @@
 
 @interface EWRefreshInstanByMJRefresh()
 
-@property (nonatomic , strong) UITableView *tableView;
+@property (nonatomic , strong) UIScrollView *tableView;
 
 @property (nonatomic , assign) SEL headerAction;
 
 @property (nonatomic , assign) SEL footerAction;
 
 @property (nonatomic , strong) id refreshManager;
+
+@property (nonatomic,strong) DiyFooter *footer;
 
 @end
 
@@ -29,15 +31,11 @@ static NSString *const KEWFooterAction = @"refreshTargetFooter";
 
 @implementation EWRefreshInstanByMJRefresh
 
-- (instancetype)initWithTarget:(UITableView *)tableView withRefreshManager:(EWBaseRefreshManager *)manager{
+- (instancetype)initWithTarget:(UIScrollView *)tableView withRefreshManager:(id)manager{
     if (self = [super init]) {
         self.refreshManager = manager;
         self.tableView = tableView;
-        DiyFooter *footer = [DiyFooter footerWithRefreshingBlock:^{
-            WeakSelf
-            [weakSelf refreshFooter];
-        }];
-        self.tableView.mj_footer = footer;
+        self.tableView.mj_footer = self.footer;
     }
     return self;
 }
@@ -69,13 +67,11 @@ static NSString *const KEWFooterAction = @"refreshTargetFooter";
  */
 
 - (void)refreshFooter{
-    self.tableView.mj_footer = [DiyFooter footerWithRefreshingBlock:^{
-        WeakSelf
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks" //去除警告
-        [weakSelf.refreshManager performSelector:weakSelf.footerAction];
+        [self.refreshManager performSelector:self.footerAction];
 #pragma clang diagnostic pop    
-    }];
+  
 }
 
 /**
@@ -103,6 +99,16 @@ static NSString *const KEWFooterAction = @"refreshTargetFooter";
 }
 
 #pragma mark - getter
+
+- (DiyFooter *)footer{
+    if (!_footer) {
+        _footer = [DiyFooter footerWithRefreshingBlock:^{
+            WeakSelf
+            [weakSelf refreshFooter];
+        }];
+    }
+    return _footer;
+}
 
 - (SEL)headerAction{
     SEL action = NSSelectorFromString(KEWHeaderAction);

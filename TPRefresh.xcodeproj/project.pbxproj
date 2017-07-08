@@ -16,11 +16,11 @@
 		58E731EA1E9B320900E628DE /* TPRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E731E91E9B320900E628DE /* TPRefreshTests.m */; };
 		58E731F51E9B320900E628DE /* TPRefreshUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E731F41E9B320900E628DE /* TPRefreshUITests.m */; };
 		58E732211E9B35AD00E628DE /* TestRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732201E9B35AD00E628DE /* TestRefreshManager.m */; };
-		58E732271E9B5BFC00E628DE /* EWBaseRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732261E9B5BFC00E628DE /* EWBaseRefreshManager.m */; };
 		58FC66CE1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66CD1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.m */; };
 		58FC66D41EAEDD18004EBDF3 /* EWRefreshFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66D31EAEDD18004EBDF3 /* EWRefreshFactory.m */; };
 		58FC66DB1EAF1EF2004EBDF3 /* DiyFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66D81EAF1EF2004EBDF3 /* DiyFooter.m */; };
 		58FC66DC1EAF1EF2004EBDF3 /* DiyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66DA1EAF1EF2004EBDF3 /* DiyHeader.m */; };
+		6C6AE9CC1F10DD0C00ADF252 /* EWBaseRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732261E9B5BFC00E628DE /* EWBaseRefreshManager.m */; };
 		D71738F1812CF555E33D3D30 /* libPods-TPRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB0073DC76232BACEDBD9CB /* libPods-TPRefresh.a */; };
 /* End PBXBuildFile section */
 
@@ -312,7 +312,7 @@
 				TargetAttributes = {
 					58E731CB1E9B320900E628DE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = N6Z77A679V;
+						DevelopmentTeam = 5T6LG5NT8U;
 						ProvisioningStyle = Automatic;
 					};
 					58E731E41E9B320900E628DE = {
@@ -427,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C6AE9CC1F10DD0C00ADF252 /* EWBaseRefreshManager.m in Sources */,
 				58FC66DC1EAF1EF2004EBDF3 /* DiyHeader.m in Sources */,
 				58FC66CE1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.m in Sources */,
 				58E732211E9B35AD00E628DE /* TestRefreshManager.m in Sources */,
@@ -434,7 +435,6 @@
 				58FC66DB1EAF1EF2004EBDF3 /* DiyFooter.m in Sources */,
 				58E731D41E9B320900E628DE /* AppDelegate.m in Sources */,
 				58E731D11E9B320900E628DE /* main.m in Sources */,
-				58E732271E9B5BFC00E628DE /* EWBaseRefreshManager.m in Sources */,
 				58FC66D41EAEDD18004EBDF3 /* EWRefreshFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,9 +583,10 @@
 			baseConfigurationReference = 5E526E48E62256CA6538951A /* Pods-TPRefresh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N6Z77A679V;
+				DEVELOPMENT_TEAM = 5T6LG5NT8U;
 				GCC_PREFIX_HEADER = TPRefresh/TPRefresh.pch;
 				INFOPLIST_FILE = TPRefresh/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccgp.TPRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -597,9 +598,10 @@
 			baseConfigurationReference = 6632ABADBA1885E1FB9980C6 /* Pods-TPRefresh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N6Z77A679V;
+				DEVELOPMENT_TEAM = 5T6LG5NT8U;
 				GCC_PREFIX_HEADER = TPRefresh/TPRefresh.pch;
 				INFOPLIST_FILE = TPRefresh/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccgp.TPRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";

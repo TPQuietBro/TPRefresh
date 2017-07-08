@@ -21,8 +21,10 @@ static EWRefreshFactory *singleton = nil;
     });
     return singleton;
 }
-
-- (id)refreshInstanceByTarget:(NSString *)targetClassString tableView:(UITableView *)tableView withRefreshManager:(id)manager{
+/**
+ * 返回的是一个三方库的实例对象,必须遵守对应协议
+ */
+- (id)refreshInstanceByTarget:(NSString *)targetClassString tableView:(UIScrollView *)tableView withRefreshManager:(id<EWChildRefreshProtocol>)manager{
     id<EWRefreshProtocol> refreshInstance = [[NSClassFromString(targetClassString) alloc] initWithTarget:tableView withRefreshManager:manager];
 
     //如果没有遵守请求的协议就返回nil
