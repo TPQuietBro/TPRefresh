@@ -1,12 +1,24 @@
 PODS:
   - MJRefresh (3.0.2)
+  - TPListModule (0.1.0)
 
 DEPENDENCIES:
   - MJRefresh
+  - TPListModule (from `https://gitlab.com/TPMainProject/TPListModule.git`)
+
+EXTERNAL SOURCES:
+  TPListModule:
+    :git: https://gitlab.com/TPMainProject/TPListModule.git
+
+CHECKOUT OPTIONS:
+  TPListModule:
+    :commit: 1a965336b0f2310cd7019f3286cbadb117a53b50
+    :git: https://gitlab.com/TPMainProject/TPListModule.git
 
 SPEC CHECKSUMS:
   MJRefresh: 85377dc8c70395cf329e102a5c55505ef387c2e1
+  TPListModule: 2d72fd3da1f34cc0d4cd6c76e8c01e6356e24b75
 
-PODFILE CHECKSUM: a7527b68f84210e8d68690ad34c37e6399911faa
+PODFILE CHECKSUM: dac55c5cc8b4be4d63449ad4d400d19db8628a9a
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.1

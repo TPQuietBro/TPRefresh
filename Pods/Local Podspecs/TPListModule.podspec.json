@@ -1,0 +1,22 @@
+{
+  "name": "TPListModule",
+  "version": "0.1.0",
+  "summary": "This is TPListModule",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://gitlab.com/TPMainProject/TPListModule",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "tangpeng": "1186886308@qq.com"
+  },
+  "source": {
+    "git": "https://gitlab.com/TPMainProject/TPListModule.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TPListModule/Classes/**/*"
+}

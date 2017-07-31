@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "EWChildRefreshProtocol.h"
+#import "UIScrollView+BlankAndDisconnect.h"
 typedef void(^callBackValue)(id value);
 
 @protocol EWBaseRefreshManagerDelegate <NSObject>
@@ -49,13 +50,13 @@ typedef void(^callBackValue)(id value);
  * 开始刷新,封装了beginRefreshing 和 refreshHeader方法
  */
 - (void)refresh;
-
-/**
- * 回调数据的方法
- */
-- (void)callBackData;
-
-- (void)callBackFailed;
+//
+///**
+// * 回调数据的方法
+// */
+//- (void)callBackData;
+//
+//- (void)callBackFailed;
 
 /**
  *  停止刷新

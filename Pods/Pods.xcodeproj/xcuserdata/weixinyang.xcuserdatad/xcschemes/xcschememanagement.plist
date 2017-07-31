@@ -14,15 +14,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TPListModule.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>20EE6874CF1F6B80B60B3F89CC229205</key>
+		<key>051145E79C731E4233F2127AF9F855FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F74D9EA91F4C43190670066BAC37D44</key>
+		<key>496643A0C6647A237EA495B023CFA1A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4849426D1B13EA4972B05EA1058B5A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -4,4 +4,5 @@ platform :ios, '9.0'
 target 'TPRefresh' do
 
 pod 'MJRefresh'
+pod 'TPListModule',:git=>'https://gitlab.com/TPMainProject/TPListModule.git'
 end

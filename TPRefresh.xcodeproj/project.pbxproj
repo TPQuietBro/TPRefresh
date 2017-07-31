@@ -20,6 +20,7 @@
 		58FC66D41EAEDD18004EBDF3 /* EWRefreshFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66D31EAEDD18004EBDF3 /* EWRefreshFactory.m */; };
 		58FC66DB1EAF1EF2004EBDF3 /* DiyFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66D81EAF1EF2004EBDF3 /* DiyFooter.m */; };
 		58FC66DC1EAF1EF2004EBDF3 /* DiyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FC66DA1EAF1EF2004EBDF3 /* DiyHeader.m */; };
+		6C5AA7B51F2F04CA00111AF5 /* UIScrollView+BlankAndDisconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5AA7B41F2F04CA00111AF5 /* UIScrollView+BlankAndDisconnect.m */; };
 		6C6AE9CC1F10DD0C00ADF252 /* EWBaseRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E732261E9B5BFC00E628DE /* EWBaseRefreshManager.m */; };
 		D71738F1812CF555E33D3D30 /* libPods-TPRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB0073DC76232BACEDBD9CB /* libPods-TPRefresh.a */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,8 @@
 		58FC66DA1EAF1EF2004EBDF3 /* DiyHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiyHeader.m; sourceTree = "<group>"; };
 		5E526E48E62256CA6538951A /* Pods-TPRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPRefresh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPRefresh/Pods-TPRefresh.debug.xcconfig"; sourceTree = "<group>"; };
 		6632ABADBA1885E1FB9980C6 /* Pods-TPRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPRefresh.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPRefresh/Pods-TPRefresh.release.xcconfig"; sourceTree = "<group>"; };
+		6C5AA7B31F2F04CA00111AF5 /* UIScrollView+BlankAndDisconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+BlankAndDisconnect.h"; sourceTree = "<group>"; };
+		6C5AA7B41F2F04CA00111AF5 /* UIScrollView+BlankAndDisconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BlankAndDisconnect.m"; sourceTree = "<group>"; };
 		8EB0073DC76232BACEDBD9CB /* libPods-TPRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TPRefresh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +188,7 @@
 		58E732101E9B331B00E628DE /* TPRefreshBase */ = {
 			isa = PBXGroup;
 			children = (
+				6C5AA7B21F2F04A400111AF5 /* EWRefreshBlankAndDisconnectManager */,
 				58FC66CF1EAEDB8B004EBDF3 /* EWRefreshProtocol */,
 				58FC66CA1EAED9FF004EBDF3 /* EWRefreshByMJRefresh */,
 				58FC66CB1EAED9FF004EBDF3 /* EWRefreshFactory */,
@@ -232,6 +236,15 @@
 				58FC66DA1EAF1EF2004EBDF3 /* DiyHeader.m */,
 			);
 			path = DIYRefreshImage;
+			sourceTree = "<group>";
+		};
+		6C5AA7B21F2F04A400111AF5 /* EWRefreshBlankAndDisconnectManager */ = {
+			isa = PBXGroup;
+			children = (
+				6C5AA7B31F2F04CA00111AF5 /* UIScrollView+BlankAndDisconnect.h */,
+				6C5AA7B41F2F04CA00111AF5 /* UIScrollView+BlankAndDisconnect.m */,
+			);
+			path = EWRefreshBlankAndDisconnectManager;
 			sourceTree = "<group>";
 		};
 		71399A92891581DEB4232F9A /* Frameworks */ = {
@@ -417,7 +430,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -431,6 +444,7 @@
 				58FC66DC1EAF1EF2004EBDF3 /* DiyHeader.m in Sources */,
 				58FC66CE1EAEDA34004EBDF3 /* EWRefreshInstanByMJRefresh.m in Sources */,
 				58E732211E9B35AD00E628DE /* TestRefreshManager.m in Sources */,
+				6C5AA7B51F2F04CA00111AF5 /* UIScrollView+BlankAndDisconnect.m in Sources */,
 				58E731D71E9B320900E628DE /* ViewController.m in Sources */,
 				58FC66DB1EAF1EF2004EBDF3 /* DiyFooter.m in Sources */,
 				58E731D41E9B320900E628DE /* AppDelegate.m in Sources */,

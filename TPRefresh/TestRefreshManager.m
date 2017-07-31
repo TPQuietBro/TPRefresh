@@ -25,6 +25,7 @@
         [self endHeaderRefreshing];
         [self endWithNoMoreData];
     }
+
     //block
     self.callbackValue ? self.callbackValue(self.dataArray) : nil;
     

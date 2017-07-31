@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '051145E79C731E4233F2127AF9F855FC'
-               BlueprintName = 'Pods-TPRefresh'
+               BlueprintIdentifier = 'C4849426D1B13EA4972B05EA1058B5A9'
+               BlueprintName = 'TPListModule'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-TPRefresh.a'>
+               BuildableName = 'libTPListModule.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
