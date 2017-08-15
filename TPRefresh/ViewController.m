@@ -60,6 +60,10 @@ static NSString *ID = @"testCell";
     [self.tableView reloadData];
 }
 
+- (void)didRefreshWithFailedCallBackValue:(id)value{
+    NSLog(@"刷新失败");
+}
+
 #pragma mark - API Mehtods
 
 - (void)getTestList{
