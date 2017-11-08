@@ -26,12 +26,12 @@
         [self endWithNoMoreData];
     }
 
-    //block
-    self.callbackValue ? self.callbackValue(self.dataArray) : nil;
-    
-    //delegate
-    [self.delegate respondsToSelector:@selector(didRefreshWithCallBackValue:)] ? [self.delegate didRefreshWithCallBackValue:self.dataArray] : nil;
-    
+//    //block
+//    self.callbackValue ? self.callbackValue(self.dataArray) : nil;
+//
+//    //delegate
+//    [self.delegate respondsToSelector:@selector(didRefreshWithCallBackValue:)] ? [self.delegate didRefreshWithCallBackValue:self.dataArray] : nil;
+    [self callBackData];
     [self endHeaderRefreshing];
     
     return self.dataTask;
@@ -45,12 +45,13 @@
         [self.dataArray addObject:@(i)];
     }
     
-    //block
-    self.callbackValue ? self.callbackValue(self.dataArray) : nil;
-    
-    //delegate
-    [self.delegate respondsToSelector:@selector(didRefreshWithCallBackValue:)] ? [self.delegate didRefreshWithCallBackValue:self.dataArray] : nil;
-    
+//    //block
+//    self.callbackValue ? self.callbackValue(self.dataArray) : nil;
+//
+//    //delegate
+//    [self.delegate respondsToSelector:@selector(didRefreshWithCallBackValue:)] ? [self.delegate didRefreshWithCallBackValue:self.dataArray] : nil;
+//
+    [self callBackData];
     [self endFooterRefreshing];
     return self.dataTask;
 }
